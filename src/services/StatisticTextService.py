@@ -14,7 +14,7 @@ class StatisticTextService(object):
             text = file.read()
 
         for handler in self.handlers:
-            handler.calculate(text)
+            handler.calculate(handler, text)
 
     def saveResult(self, pathToFile):
         pass

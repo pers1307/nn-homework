@@ -1,9 +1,20 @@
 class AverageSentenceLength(object):
 
     def __init__(self):
-        pass
+        self.sentences = []
 
     def calculate(self, text):
+        countCharInSentence = 0
+        self.sentences = []
 
+        for symbol in text:
+            countCharInSentence += 1
 
-        pass
+            if symbol == '.':
+                self.sentences.append(countCharInSentence)
+                countCharInSentence = 0
+
+        if (countCharInSentence != 0):
+            self.sentences.append(countCharInSentence)
+
+        print(self.sentences)

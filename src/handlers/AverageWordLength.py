@@ -1,7 +1,20 @@
 class AverageWordLength(object):
 
     def __init__(self):
-        pass
+        self.words = []
 
     def calculate(self, text):
-        pass
+        countCharInWord = 0
+        self.words = []
+
+        for symbol in text:
+            countCharInWord += 1
+
+            if symbol == ' ':
+                self.words.append(countCharInWord - 1)
+                countCharInWord = 0
+
+        if (countCharInWord != 0):
+            self.words.append(countCharInWord)
+
+        print(self.words)
