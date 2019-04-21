@@ -1,22 +1,20 @@
+# После обработки передаем путь к выходному файлу где все сохраняется
+# Потом по запросу отдают результат и он записывается в файл
+
 class StatisticTextService(object):
 
     def __init__(self):
-        pass
+        self.handlers = []
 
     def addHandler(self, handler):
-        pass
+        self.handlers.append(handler)
 
     def calculate(self, pathToFile):
-        pass
+        with open(pathToFile, 'r') as file:
+            text = file.read()
 
-#         проверка существования файла
+        for handler in self.handlers:
+            handler.calculate(text)
 
     def saveResult(self, pathToFile):
         pass
-
-
-
-
-
-
-
