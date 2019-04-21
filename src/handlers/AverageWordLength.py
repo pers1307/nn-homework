@@ -1,3 +1,5 @@
+import numpy as np
+
 class AverageWordLength(object):
 
     def __init__(self):
@@ -17,4 +19,5 @@ class AverageWordLength(object):
         if (countCharInWord != 0):
             self.words.append(countCharInWord)
 
-        print(self.words)
+    def resultAsText(self):
+        return 'Средняя длинна слова в буквах: ' + str(np.mean(self.words))

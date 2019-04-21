@@ -1,6 +1,3 @@
-# После обработки передаем путь к выходному файлу где все сохраняется
-# Потом по запросу отдают результат и он записывается в файл
-
 class StatisticTextService(object):
 
     def __init__(self):
@@ -17,4 +14,9 @@ class StatisticTextService(object):
             handler.calculate(handler, text)
 
     def saveResult(self, pathToFile):
-        pass
+        file = open(pathToFile, 'w')
+
+        for handler in self.handlers:
+            file.write(handler.resultAsText(handler) + '\n')
+
+        file.close()

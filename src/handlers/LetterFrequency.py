@@ -23,8 +23,6 @@ class LetterFrequency(object):
             else:
                 self.charDictionary.update({symbol: count + 1})
 
-        print( self.charDictionary )
-
     def countWords(self, text):
         countCharInWord = 0
         self.words = []
@@ -38,3 +36,12 @@ class LetterFrequency(object):
 
         if (countCharInWord != 0):
             self.words.append(countCharInWord)
+
+    def resultAsText(self):
+        wordCount = self.words.count()
+
+
+
+
+
+        return '123'

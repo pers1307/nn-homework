@@ -1,3 +1,5 @@
+import numpy as np
+
 class AverageSentenceLength(object):
 
     def __init__(self):
@@ -17,4 +19,5 @@ class AverageSentenceLength(object):
         if (countCharInSentence != 0):
             self.sentences.append(countCharInSentence)
 
-        print(self.sentences)
+    def resultAsText(self):
+        return 'Средняя длинна предложения в буквах: ' + str(np.mean(self.sentences))
